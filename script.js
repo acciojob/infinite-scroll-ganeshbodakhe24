@@ -27,7 +27,9 @@ function isAtBottom() {
   return infi_list.scrollTop + infi_list.clientHeight >= infi_list.scrollHeight;
 }
 
-// Listen scroll on list container
 infi_list.addEventListener("scroll", () => {
-  if (isAtBottom()) addMoreItems();
+  if (infi_list.scrollTop + infi_list.clientHeight >= infi_list.scrollHeight - 5) {
+    addMoreItems();
+  }
 });
+
